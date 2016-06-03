@@ -18,7 +18,6 @@
 import numpy as np
 
 from lib.pattern import Pattern
-from lib.buffer_utils import BufferUtils
 from lib.parameters import HLSParameter
 
 # Defaults
@@ -34,7 +33,6 @@ class SolidColor(Pattern):
     # Internal parameters
     def setup(self):
         self.add_parameter(HLSParameter('color', self._color))
-        self._pixels = self.scene().get_all_pixels()
         super(SolidColor, self).setup()
 
     def parameter_changed(self, parameter):
